@@ -1,7 +1,7 @@
 uniform float time;
+in vec3 fragmentColor;
+out vec3 color;
 
 void main() {
-    vec3 col = 0.5 + 0.5 * cos(time + vec3(0, 2, 4));
-    gl_FragColor = vec4(col, 1.0);
-
+    color = fragmentColor;
 }

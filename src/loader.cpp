@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <glm/glm.hpp>
 
 
 std::string readFile(const std::string &filePath) {
@@ -22,4 +23,15 @@ std::string readFile(const std::string &filePath) {
 
     fileStream.close();
     return content;
+}
+
+bool loadModel(
+        const char *path,
+        std::vector <glm::vec3> &vertices,
+        std::vector <glm::vec2> &uv,
+        std::vector <glm::vec3> &normals
+) 
+{
+
+    return true;
 }
