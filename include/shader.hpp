@@ -1,8 +1,8 @@
 #ifndef _SHADER_HPP_
 #define _SHADER_HPP_
 #include <string>
-#include <GL/glew.h>
-#include <glm/glm.hpp>
+#include "GL/glew.h"
+#include "glm/glm.hpp"
 
 class Shader {
     

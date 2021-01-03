@@ -1,4 +1,4 @@
-# Install script for directory: /home/kodor/proj/3d_renderer_cpp/external/assimp/tools/assimp_cmd
+# Install script for directory: /Users/kodor/proj/3d-render/external/assimp/tools/assimp_cmd
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,37 +27,29 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
-endif()
-
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xassimp-binx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/kodor/proj/3d-render/bin/assimp")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/kodor/proj/3d_renderer_cpp/external/assimp/bin/assimp")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp"
-         OLD_RPATH "/home/kodor/proj/3d_renderer_cpp/external/assimp:/home/kodor/proj/3d_renderer_cpp/external/assimp/lib:"
-         NEW_RPATH "")
+    execute_process(COMMAND "/usr/bin/install_name_tool"
+      -change "@rpath/libassimp.5.dylib" "/usr/local/lib/libassimp.5.dylib"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
+    execute_process(COMMAND /usr/bin/install_name_tool
+      -delete_rpath "/Users/kodor/proj/3d-render/external/assimp"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
+    execute_process(COMMAND /usr/bin/install_name_tool
+      -delete_rpath "/Users/kodor/proj/3d-render/external/assimp/lib"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
+    execute_process(COMMAND /usr/bin/install_name_tool
+      -delete_rpath "/Users/kodor/proj/3d-render/lib"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
+      execute_process(COMMAND "/Library/Developer/CommandLineTools/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/assimp")
     endif()
   endif()
 endif()

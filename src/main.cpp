@@ -1,7 +1,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include <iostream>
-#include <GL/glew.h>
-#include <SDL2/SDL.h>
+#include "GL/glew.h"
+#include "SDL2/SDL.h"
 #include "../include/window.hpp"
 #include "../include/shader.hpp"
 #include "../include/mesh.hpp"
@@ -20,7 +20,7 @@ int main() {
 
     Shader shader("./src/glsl/model");
 
-    Model teapot("./models/backpack/backpack.obj");
+    Model teapot("./models/teapot.obj");
 
     float counter = 0.0f;
 

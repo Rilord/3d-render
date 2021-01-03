@@ -3,12 +3,13 @@
 #define TEXTURE_DIFFUSE ""
 #define TEXTURE_SPECULAR ""
 #include <string>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <GL/glew.h>
+#include "glm/glm.hpp"
+#include "glm/gtc/matrix_transform.hpp"
+#include "GL/glew.h"
+#include "SDL2/SDL.h"
 #include <string>
 #include <vector>
-#include <stb/stb_image.h>
+#include "stb_image.h"
 #include "shader.hpp"
 
 

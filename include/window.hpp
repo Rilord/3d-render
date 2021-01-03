@@ -1,6 +1,6 @@
 #ifndef __WINDOW_HPP__
 #define __WINDOW_HPP__
-#include <SDL2/SDL.h>
+#include "SDL2/SDL.h"
 #include <string>
 #include <GL/glew.h>
 #include "camera.hpp"

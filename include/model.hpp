@@ -2,12 +2,12 @@
 #define _MODEL_H_
 #include "mesh.hpp"
 #include "shader.hpp"
-#include <assimp/Importer.hpp>
-#include <assimp/scene.h>
-#include <assimp/postprocess.h>
+#include "assimp/Importer.hpp"
+#include "assimp/scene.h"
+#include "assimp/postprocess.h"
 #include <vector>
 #include <string>
-#include <glm/glm.hpp>
+#include "glm/glm.hpp"
 #endif /* _MODEL_H_ */
 
 //TODO: Load the model from .obj file

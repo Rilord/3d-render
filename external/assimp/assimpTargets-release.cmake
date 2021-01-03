@@ -36,7 +36,7 @@ if(MSVC)
   set(ASSIMP_LIBRARY_SUFFIX "-${MSVC_PREFIX}-mt" CACHE STRING "the suffix for the assimp windows library" )
 
   if(ASSIMP_BUILD_SHARED_LIBS)
-    set(sharedLibraryName "assimp${ASSIMP_LIBRARY_SUFFIX}.so")
+    set(sharedLibraryName "assimp${ASSIMP_LIBRARY_SUFFIX}.dylib")
     set(importLibraryName "assimp${ASSIMP_LIBRARY_SUFFIX}")
 
     # Import target "assimp::assimp" for configuration "Release"
@@ -64,9 +64,9 @@ else()
   set(ASSIMP_LIBRARY_SUFFIX "" CACHE STRING "the suffix for the assimp libraries" )
   if(ASSIMP_BUILD_SHARED_LIBS)
     if(APPLE)
-      set(sharedLibraryName "libassimp${ASSIMP_LIBRARY_SUFFIX}.5.so")
+      set(sharedLibraryName "libassimp${ASSIMP_LIBRARY_SUFFIX}.5.dylib")
     else()
-      set(sharedLibraryName "libassimp${ASSIMP_LIBRARY_SUFFIX}.so.5")
+      set(sharedLibraryName "libassimp${ASSIMP_LIBRARY_SUFFIX}.dylib.5")
     endif()
     set_target_properties(assimp::assimp PROPERTIES
       IMPORTED_SONAME_RELEASE "${sharedLibraryName}"

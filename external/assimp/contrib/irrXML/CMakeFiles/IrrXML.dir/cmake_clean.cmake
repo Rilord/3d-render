@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "../../lib/libIrrXML.a"
-  "../../lib/libIrrXML.pdb"
   "CMakeFiles/IrrXML.dir/irrXML.cpp.o"
+  "../../../../lib/libIrrXML.pdb"
+  "../../../../lib/libIrrXML.dylib"
 )
 
 # Per-language clean rules from dependency scanning.
